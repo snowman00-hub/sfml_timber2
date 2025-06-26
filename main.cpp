@@ -1,12 +1,27 @@
-#include <SFML/Graphics.hpp>
-#include "InputMgr.h"
 #include <iostream>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include "InputMgr.h"
+#include "ResourceMgr.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
+
+    ResourceMgr<sf::Texture>::Instance().Load(
+        {
+            "graphics/player.png",
+            "graphics/player.png",
+            "graphics/tree.png"
+        } 
+    );
+
+    sf::Sprite sprite;
+    sprite.setTexture(ResourceMgr<sf::Texture>::Instance().Get("graphics/player.png"));
+    sf::Sprite sprite2;
+    sprite2.setTexture(ResourceMgr<sf::Texture>::Instance().Get("graphics/tree.png"));
 
     while (window.isOpen())
     {
@@ -42,6 +57,8 @@ int main()
         // Draw
         window.clear();
         window.draw(shape);
+        window.draw(sprite2);
+        window.draw(sprite);
         window.display();
     }
 

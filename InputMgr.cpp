@@ -1,9 +1,9 @@
 #include <algorithm>
 #include "InputMgr.h"
 
-std::list<sf::Keyboard::Key> InputMgr::downKeys;
-std::list<sf::Keyboard::Key> InputMgr::heldKeys;
-std::list<sf::Keyboard::Key> InputMgr::upKeys;
+std::vector<int> InputMgr::downKeys;
+std::vector<int> InputMgr::heldKeys;
+std::vector<int> InputMgr::upKeys;
 
 void InputMgr::Init()
 {

@@ -2,13 +2,14 @@
 #include <list>
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/Window/Event.hpp>
+#include <vector>
 
 class InputMgr
 {
 private:
-	static std::list<sf::Keyboard::Key> downKeys;
-	static std::list<sf::Keyboard::Key> heldKeys;
-	static std::list<sf::Keyboard::Key> upKeys;
+	static std::vector<int> downKeys;
+	static std::vector<int> heldKeys;
+	static std::vector<int> upKeys;
 
 public:
 	static void Init();
