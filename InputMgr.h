@@ -4,12 +4,14 @@
 #include <SFML/Window/Event.hpp>
 #include <vector>
 
+const int KEYCOUNT = sf::Keyboard::Key::KeyCount;
+
 class InputMgr
 {
 private:
-	static std::vector<int> downKeys;
-	static std::vector<int> heldKeys;
-	static std::vector<int> upKeys;
+	static std::vector<sf::Keyboard::Key> downKeys;
+	static std::vector<sf::Keyboard::Key> heldKeys;
+	static std::vector<sf::Keyboard::Key> upKeys;
 
 public:
 	static void Init();
@@ -22,7 +24,7 @@ public:
 	static bool GetKeyUp(sf::Keyboard::Key key);
 	static bool GetKey(sf::Keyboard::Key key);
 
-	static bool Contains(const std::list<sf::Keyboard::Key>& list, sf::Keyboard::Key key);
-	static void Remove(std::list<sf::Keyboard::Key>& list, sf::Keyboard::Key key);
+	static bool Contains(const std::vector<sf::Keyboard::Key>& vec, sf::Keyboard::Key key);
+	static void Remove(std::vector<sf::Keyboard::Key>& vec, sf::Keyboard::Key key);
 };
 
