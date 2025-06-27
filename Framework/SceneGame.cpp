@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SceneGame.h"
 #include "TextGo.h"
+#include "SpriteGo.h"
 
 SceneGame::SceneGame()
 	: Scene(SceneIds::Game)

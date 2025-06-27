@@ -12,8 +12,7 @@ int main()
             "graphics/player.png",
             "graphics/tree.png"
         } 
-    );
-    
+    ); 
     FONT_MGR.Load("fonts/KOMIKAP_.ttf");
 
     SceneGame sceneGame;
