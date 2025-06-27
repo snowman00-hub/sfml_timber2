@@ -1,4 +1,4 @@
-#include <algorithm>
+#include "stdafx.h"
 #include "InputMgr.h"
 
 std::list<sf::Keyboard::Key> InputMgr::downKeys;

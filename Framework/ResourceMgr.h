@@ -1,6 +1,4 @@
 #pragma once
-#include <unordered_map>
-#include <string>
 #include "Singleton.h"
 
 template<typename T>
@@ -97,3 +95,7 @@ public:
 
 template<typename T>
 T ResourceMgr<T>::Empty;
+
+#define TEXTURE_MGR (ResourceMgr<sf::Texture>::Instance())
+#define FONT_MGR (ResourceMgr<sf::Font>::Instance())
+#define SOUNDBUFFER_MGR (ResourceMgr<sf::SoundBuffer>::Instance())

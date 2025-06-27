@@ -1,10 +1,4 @@
 #pragma once
-#include <list>
-#include <SFML/Window/Keyboard.hpp>
-#include <SFML/Window/Event.hpp>
-#include <vector>
-
-const int KEYCOUNT = sf::Keyboard::Key::KeyCount;
 
 class InputMgrVector
 {

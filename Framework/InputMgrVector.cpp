@@ -1,4 +1,4 @@
-#include <algorithm>
+#include "stdafx.h"
 #include "InputMgrVector.h"
 
 std::vector<sf::Keyboard::Key> InputMgrVector::downKeys;
