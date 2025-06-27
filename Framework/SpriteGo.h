@@ -18,6 +18,7 @@ public:
 	void setRotation(float r) override;
 	void setScale(const sf::Vector2f& s) override;
 	void setOrigin(const sf::Vector2f& o) override;
+	void setOrigin(Origins preset) override;
 
 	void Init() override;
 	void Release() override;

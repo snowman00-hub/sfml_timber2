@@ -26,8 +26,18 @@ void SpriteGo::setScale(const sf::Vector2f& s)
 
 void SpriteGo::setOrigin(const sf::Vector2f& o)
 {
+	originPreset = Origins::Custom;
 	origin = o;
 	sprite.setOrigin(o);
+}
+
+void SpriteGo::setOrigin(Origins preset)
+{
+	originPreset = preset;
+	if (originPreset != Origins::Custom)
+	{
+		origin = Utils::setOrigin(sprite, originPreset);
+	}
 }
 
 void SpriteGo::Init()
@@ -41,6 +51,7 @@ void SpriteGo::Release()
 void SpriteGo::Reset()
 {
 	sprite.setTexture(TEXTURE_MGR.Get(textureId));
+	Utils::setOrigin(sprite, originPreset);
 }
 
 void SpriteGo::Update(float dt)
