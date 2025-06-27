@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "SpriteGo.h"
+#include "TextGo.h"
 
 int main()
 {
@@ -14,6 +15,18 @@ int main()
             "graphics/tree.png"
         } 
     );
+
+    FONT_MGR.Load("fonts/KOMIKAP_.ttf");
+    TextGo textGo("fonts/KOMIKAP_.ttf");
+    textGo.Init();
+
+    textGo.setColor(sf::Color::Red);
+    textGo.setString("Hello");
+    textGo.setCharSize(100);
+    textGo.setPosition(sf::Vector2f(600.f, 360.f));
+    textGo.setOrigin(Origins::ML);
+
+    textGo.Reset();
 
     SpriteGo spriteGo("graphics/player.png");
     spriteGo.Init();
@@ -38,11 +51,13 @@ int main()
         // Update
         InputMgr::Update(0.f);
         spriteGo.Update(0.f);
+        textGo.Update(0.f);
 
         // Draw
         window.clear();
         //window.draw(shape);
         spriteGo.Draw(window);
+        textGo.Draw(window);
         window.display();
     }
 
