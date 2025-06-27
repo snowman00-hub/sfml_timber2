@@ -4,10 +4,6 @@
 TextGo::TextGo(const std::string& Id, const std::string& name)
 	: GameObject(name), fontId(Id)
 {
-	text.setString("");
-	text.setFillColor(sf::Color::White);
-	text.setCharacterSize(24);
-	Utils::setOrigin(text, originPreset);
 }
 
 void TextGo::setCharSize(int size)
