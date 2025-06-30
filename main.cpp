@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "SpriteGo.h"
 #include "TextGo.h"
-#include "SceneGame.h"
 
 int main()
 {
@@ -15,9 +14,7 @@ int main()
     ); 
     FONT_MGR.Load("fonts/KOMIKAP_.ttf");
 
-    SceneGame sceneGame;
-    sceneGame.Init();
-    sceneGame.Enter();
+    SCENE_MGR.Init();
 
     while (window.isOpen())
     {
@@ -34,14 +31,14 @@ int main()
 
         // Update
         InputMgr::Update(0.f);
-        sceneGame.Update(0.f);
+        SCENE_MGR.Update(0.f);
 
         // Draw
         window.clear();
-        sceneGame.Draw(window);
+        SCENE_MGR.Draw(window);
         window.display();
     }
-    sceneGame.Release();
+    SCENE_MGR.Release();
 
     return 0;
 }

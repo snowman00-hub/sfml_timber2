@@ -19,3 +19,4 @@
 #include "InputMgr.h"
 #include "GameObject.h"
 #include "Scene.h"
+#include "SceneMgr.h"
