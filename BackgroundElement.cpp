@@ -15,15 +15,15 @@ void BackgroundElement::SetSide(Sides side)
 		case Sides::Left:
 			direction = { 1.f,0.f };
 			setScale({ -1.f,1.f });
-			setPosition({ -150, 0 });
+			setPosition({ -150, Utils::RandomRange(0.f,600.f) });
 			break;
 		case Sides::Right:
 			direction = { -1.f,0.f };
 			setScale({ 1.f,1.f });
-			setPosition({ 1920 + 150, 0 });
+			setPosition({ 1920 + 150, Utils::RandomRange(0.f,600.f)});
 			break;
 	}
-	speed = 200.f;
+	speed = Utils::RandomRange(200.f, 600.f);
 }
 
 void BackgroundElement::Reset()
@@ -31,7 +31,14 @@ void BackgroundElement::Reset()
 	SpriteGo::Reset();
 
 	setOrigin(Origins::MC);
-	SetSide(Sides::Left);
+	if (Utils::RandomValue() < 0.5f)
+	{
+		SetSide(Sides::Left);
+	}
+	else
+	{
+		SetSide(Sides::Right);
+	}
 	setPosition({ 500.f,0.f });
 }
 // 스케일, y값 랜덤, 왼쪽오른쪽
@@ -45,6 +52,13 @@ void BackgroundElement::Update(float dt)
 	sf::FloatRect bounds = FRAMEWORK.GetWindowBounds();
 	if (pos.x < -200.f || pos.x > bounds.width + 200.f)
 	{
-		SetSide(Sides::Right);
+		if (Utils::RandomValue() < 0.5f)
+		{
+			SetSide(Sides::Left);
+		}
+		else
+		{
+			SetSide(Sides::Right);
+		}
 	}
 }

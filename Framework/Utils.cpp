@@ -1,6 +1,26 @@
 #include "stdafx.h"
 #include "Utils.h"
 
+void Utils::Init()
+{
+	srand((int)time(0));
+}
+
+float Utils::RandomValue()
+{
+	return (float)rand() / RAND_MAX;
+}
+
+int Utils::RandomRange(int min, int maxExclude)
+{
+	return min + rand() % (maxExclude - min);
+}
+
+float Utils::RandomRange(float min, float max)
+{
+	return min + (max - min) * rand() / RAND_MAX;
+}
+
 sf::Vector2f Utils::setOrigin(sf::Sprite& obj, Origins preset)
 {
 	sf::FloatRect rect = obj.getLocalBounds();
