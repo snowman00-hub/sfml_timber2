@@ -16,3 +16,10 @@ enum class SceneIds
 	Dev2,
 	Count,
 };
+
+enum class Sides
+{
+	Left,
+	Right,
+	None,
+};

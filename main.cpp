@@ -3,7 +3,7 @@
 
 int main()
 {
-    FRAMEWORK.Init(1280, 720, "Timber!!");
+    FRAMEWORK.Init(1920, 1080, "Timber!!");
     FRAMEWORK.Do();
     FRAMEWORK.Release();
 

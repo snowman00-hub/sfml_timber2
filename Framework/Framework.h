@@ -49,4 +49,3 @@ public:
 };
 
 #define FRAMEWORK (Framework::Instance())
-
