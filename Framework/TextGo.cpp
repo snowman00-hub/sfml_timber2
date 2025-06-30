@@ -68,14 +68,6 @@ void TextGo::Reset()
 
 void TextGo::Update(float dt)
 {
-	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
-	{
-		setPosition({ 0.f,0.f });
-	}
-	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
-	{
-		setPosition({ 500.f,500.f });
-	}
 }
 
 void TextGo::Draw(sf::RenderWindow& window)
