@@ -1,44 +1,11 @@
 #include "stdafx.h"
-#include "SpriteGo.h"
-#include "TextGo.h"
+#include "Framework.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!");
-        
-    std::vector<std::string> v1 =
-    {
-        "graphics/player.png",
-        "graphics/tree.png"
-    };
-    TEXTURE_MGR.Load(v1); 
-    FONT_MGR.Load("fonts/KOMIKAP_.ttf");
-
-    SCENE_MGR.Init();
-
-    while (window.isOpen())
-    {
-        InputMgr::Clear();
-
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-
-            InputMgr::UpdateEvent(event);
-        }
-
-        // Update
-        InputMgr::Update(0.f);
-        SCENE_MGR.Update(0.f);
-
-        // Draw
-        window.clear();
-        SCENE_MGR.Draw(window);
-        window.display();
-    }
-    SCENE_MGR.Release();
+    FRAMEWORK.Init(1280, 720, "Timber!!");
+    FRAMEWORK.Do();
+    FRAMEWORK.Release();
 
     return 0;
 }
