@@ -140,7 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BackgroundElement.cpp" />
+    <ClCompile Include="Framework\BackgroundElement.cpp" />
+    <ClCompile Include="Framework\Bee.cpp" />
     <ClCompile Include="Framework\Framework.cpp" />
     <ClCompile Include="Framework\GameObject.cpp" />
     <ClCompile Include="Framework\InputMgr.cpp" />
@@ -157,10 +158,11 @@
     </ClCompile>
     <ClCompile Include="Framework\Utils.cpp" />
     <ClCompile Include="Framework\TextGo.cpp" />
-    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="Framework\Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BackgroundElement.h" />
+    <ClInclude Include="Framework\BackgroundElement.h" />
+    <ClInclude Include="Framework\Bee.h" />
     <ClInclude Include="Framework\Framework.h" />
     <ClInclude Include="Framework\Defines.h" />
     <ClInclude Include="Framework\GameObject.h" />
@@ -177,7 +179,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Framework\Utils.h" />
     <ClInclude Include="Framework\TextGo.h" />
-    <ClInclude Include="Tree.h" />
+    <ClInclude Include="Framework\Tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

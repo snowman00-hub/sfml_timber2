@@ -12,6 +12,24 @@ void Tree::setPosition(const sf::Vector2f& pos)
 
 void Tree::UpdateBranches()
 {
+	for (int i = branchesSide.size() - 1; i > 0; i--)
+	{
+		branchesSide[i] = branchesSide[i - 1];
+	}
+	branchesSide[0] = (Sides)Utils::RandomRange(0, 3);
+
+	for (int i = 0; i < branchesSide.size(); i++)
+	{
+		switch (branchesSide[i])
+		{
+			case Sides::Left:
+				branches[i].setScale(-1.f, 1.f);
+				break;
+			case Sides::Right:
+				branches[i].setScale(1.f, 1.f);
+				break;
+		}
+	}
 }
 
 void Tree::Init()
@@ -58,6 +76,10 @@ void Tree::Reset()
 
 void Tree::Update(float dt)
 {
+	if (InputMgr::GetKeyDown(sf::Keyboard::Left) || InputMgr::GetKeyDown(sf::Keyboard::Right))
+	{
+		UpdateBranches();
+	}
 }
 
 void Tree::Draw(sf::RenderWindow& window)
