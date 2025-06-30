@@ -43,7 +43,7 @@ public:
 		resources.insert({ id,res });
 	}
 	
-	void Load(const std::vector<std::string>&& ids)
+	void Load(const std::vector<std::string>& ids)
 	{
 		for (const auto& id : ids)
 		{
@@ -69,7 +69,7 @@ public:
 		return true;
 	}
 
-	void Unload(const std::vector<std::string>&& ids)
+	void Unload(const std::vector<std::string>& ids)
 	{
 		for (const auto& id : ids)
 		{

@@ -6,12 +6,12 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!");
         
-    TEXTURE_MGR.Load(
-        {
-            "graphics/player.png",
-            "graphics/tree.png"
-        } 
-    ); 
+    std::vector<std::string> v1 =
+    {
+        "graphics/player.png",
+        "graphics/tree.png"
+    };
+    TEXTURE_MGR.Load(v1); 
     FONT_MGR.Load("fonts/KOMIKAP_.ttf");
 
     SCENE_MGR.Init();
