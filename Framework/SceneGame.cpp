@@ -38,9 +38,6 @@ void SceneGame::Init()
 
     Scene::Init();
 }
-// 누르고 있을 때 도끼 보이기
-// 충돌 시 비석
-// 죽었을 때 입력 안받고, 리턴시 재시작
 
 void SceneGame::Enter()
 {
@@ -79,6 +76,7 @@ void SceneGame::Update(float dt)
         {
             player->setSprite("graphics/rip.png");
             player->setAxeFalse();
+            player->setRipScale();
             isActive = false;
         }
     }
@@ -88,7 +86,7 @@ void SceneGame::Update(float dt)
         {
             isActive = true;
             tree->Reset();
-            player->Reset();
+            player->Reset();            
         }
     }
 }

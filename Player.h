@@ -25,10 +25,10 @@ public:
 	void setSide(Sides s);
 	Sides getSide() const { return side; }
 
-	void setSprite(const std::string& id);
-
 	void setPosition(const sf::Vector2f& pos) override;
 
+	void setSprite(const std::string& id) { sprite.setTexture(TEXTURE_MGR.Get(id)); }
+	void setRipScale() { sprite.setScale({ 1.f,1.f }); }
 	void setAxeFalse() { isAxe = false; }
 	
 	void Init() override;

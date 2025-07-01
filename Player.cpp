@@ -16,11 +16,6 @@ void Player::setSide(Sides s)
 	axeSprite.setScale(scales[(int)side]);
 }
 
-void Player::setSprite(const std::string& id)
-{
-	sprite.setTexture(TEXTURE_MGR.Get(id));
-}
-
 void Player::setPosition(const sf::Vector2f& pos)
 {
 	position = pos;
@@ -58,8 +53,7 @@ void Player::Reset()
 
 void Player::Update(float dt)
 {
-	isAxe = false;
-
+	/*
 	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
 	{
 		setSide(Sides::Left);
@@ -69,7 +63,8 @@ void Player::Update(float dt)
 	{
 		setSide(Sides::Right);
 	}
-
+	*/
+	isAxe = false;
 	if (InputMgr::GetKey(sf::Keyboard::Left) || InputMgr::GetKey(sf::Keyboard::Right))
 	{
 		isAxe = true;
