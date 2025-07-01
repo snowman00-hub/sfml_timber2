@@ -78,7 +78,7 @@ GameObject* Scene::FindGameObject(const std::string& name)
 {
 	for (auto obj : gameObjects)
 	{
-		if (obj->getName() == name)
+		if (obj->GetName() == name)
 		{
 			return obj;
 		}

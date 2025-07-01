@@ -6,7 +6,7 @@ Player::Player(const std::string& name)
 {
 }
 
-void Player::setSide(Sides s)
+void Player::SetSide(Sides s)
 {
 	side = s;
 	sprite.setPosition(position + positions[(int)side]);
@@ -16,7 +16,7 @@ void Player::setSide(Sides s)
 	axeSprite.setScale(scales[(int)side]);
 }
 
-void Player::setPosition(const sf::Vector2f& pos)
+void Player::SetPosition(const sf::Vector2f& pos)
 {
 	position = pos;
 	sprite.setPosition(position + positions[(int)side]);
@@ -47,8 +47,8 @@ void Player::Reset()
 {
 	sprite.setTexture(TEXTURE_MGR.Get(textureId));
 	axeSprite.setTexture(TEXTURE_MGR.Get(axeTexId));
-	Utils::setOrigin(sprite, Origins::BC);
-	setSide(Sides::Right);
+	Utils::SetOrigin(sprite, Origins::BC);
+	SetSide(Sides::Right);
 }
 
 void Player::Update(float dt)

@@ -22,14 +22,14 @@ public:
 	Player(const std::string& name = "");
 	~Player() override = default;
 
-	void setSide(Sides s);
-	Sides getSide() const { return side; }
+	void SetSide(Sides s);
+	Sides GetSide() const { return side; }
 
-	void setPosition(const sf::Vector2f& pos) override;
+	void SetPosition(const sf::Vector2f& pos) override;
 
-	void setSprite(const std::string& id) { sprite.setTexture(TEXTURE_MGR.Get(id)); }
-	void setRipScale() { sprite.setScale({ 1.f,1.f }); }
-	void setAxeFalse() { isAxe = false; }
+	void SetSprite(const std::string& id) { sprite.setTexture(TEXTURE_MGR.Get(id)); }
+	void SetRipScale() { sprite.setScale({ 1.f,1.f }); }
+	void SetAxeFalse() { isAxe = false; }
 	
 	void Init() override;
 	void Release() override;

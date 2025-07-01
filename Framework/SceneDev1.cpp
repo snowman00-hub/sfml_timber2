@@ -12,10 +12,10 @@ void SceneDev1::Init()
 	fontIds.push_back("fonts/KOMIKAP_.ttf");
 
 	TextGo* go = new TextGo("fonts/KOMIKAP_.ttf");
-	go->setString("DEV 1");
-	go->setCharSize(30);
-	go->setColor(sf::Color::White);
-	go->setPosition({ 640.f,360.f });
+	go->SetString("DEV 1");
+	go->SetCharSize(30);
+	go->SetColor(sf::Color::White);
+	go->SetPosition({ 640.f,360.f });
 	AddGameObject(go);
 	
 	Scene::Init();

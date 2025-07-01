@@ -43,10 +43,10 @@ void SceneGame::Enter()
 {
     Scene::Enter();
 
-    sf::Vector2f pos = tree->getPosition();
+    sf::Vector2f pos = tree->GetPosition();
     pos.y = 950.f;
 
-    player->setPosition(pos);
+    player->SetPosition(pos);
 }
 
 void SceneGame::Exit()
@@ -63,20 +63,20 @@ void SceneGame::Update(float dt)
         if (InputMgr::GetKeyDown(sf::Keyboard::Left))
         {
             tree->UpdateBranches();
-            player->setSide(Sides::Left);
+            player->SetSide(Sides::Left);
         }
 
         if (InputMgr::GetKeyDown(sf::Keyboard::Right))
         {
             tree->UpdateBranches();
-            player->setSide(Sides::Right);
+            player->SetSide(Sides::Right);
         }
 
-        if (tree->GetSide() == player->getSide())
+        if (tree->GetSide() == player->GetSide())
         {
-            player->setSprite("graphics/rip.png");
-            player->setAxeFalse();
-            player->setRipScale();
+            player->SetSprite("graphics/rip.png");
+            player->SetAxeFalse();
+            player->SetRipScale();
             isActive = false;
         }
     }

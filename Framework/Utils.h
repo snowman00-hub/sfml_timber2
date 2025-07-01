@@ -11,6 +11,6 @@ public:
 	static float RandomRange(float min, float max);
 
 	// Origin
-	static sf::Vector2f setOrigin(sf::Sprite& obj, Origins preset);
-	static sf::Vector2f setOrigin(sf::Text& obj, Origins preset);
+	static sf::Vector2f SetOrigin(sf::Sprite& obj, Origins preset);
+	static sf::Vector2f SetOrigin(sf::Text& obj, Origins preset);
 };

@@ -6,37 +6,37 @@ SpriteGo::SpriteGo(const std::string& texId, const std::string& name)
 {
 }
 
-void SpriteGo::setPosition(const sf::Vector2f& pos)
+void SpriteGo::SetPosition(const sf::Vector2f& pos)
 {
 	position = pos;
 	sprite.setPosition(position);
 }
 
-void SpriteGo::setRotation(float r)
+void SpriteGo::SetRotation(float r)
 {
 	rotation = r;
 	sprite.setRotation(rotation);
 }
 
-void SpriteGo::setScale(const sf::Vector2f& s)
+void SpriteGo::SetScale(const sf::Vector2f& s)
 {
 	scale = s;
 	sprite.setScale(scale);
 }
 
-void SpriteGo::setOrigin(const sf::Vector2f& o)
+void SpriteGo::SetOrigin(const sf::Vector2f& o)
 {
 	originPreset = Origins::Custom;
 	origin = o;
 	sprite.setOrigin(o);
 }
 
-void SpriteGo::setOrigin(Origins preset)
+void SpriteGo::SetOrigin(Origins preset)
 {
 	originPreset = preset;
 	if (originPreset != Origins::Custom)
 	{
-		origin = Utils::setOrigin(sprite, originPreset);
+		origin = Utils::SetOrigin(sprite, originPreset);
 	}
 }
 
@@ -51,7 +51,7 @@ void SpriteGo::Release()
 void SpriteGo::Reset()
 {
 	sprite.setTexture(TEXTURE_MGR.Get(textureId));
-	Utils::setOrigin(sprite, originPreset);
+	Utils::SetOrigin(sprite, originPreset);
 }
 
 void SpriteGo::Update(float dt)

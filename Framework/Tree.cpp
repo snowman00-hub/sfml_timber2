@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Tree.h"
 
-void Tree::setPosition(const sf::Vector2f& pos)
+void Tree::SetPosition(const sf::Vector2f& pos)
 {
 	position = pos;
 	tree.setPosition(pos);
@@ -51,7 +51,7 @@ void Tree::Release()
 void Tree::Reset()
 {
 	tree.setTexture(TEXTURE_MGR.Get(texIdTree), true);
-	Utils::setOrigin(tree, Origins::TC);
+	Utils::SetOrigin(tree, Origins::TC);
 	sf::FloatRect bounds = tree.getLocalBounds();
 
 	for (int i = 0; i < branches.size(); i++)
@@ -74,7 +74,7 @@ void Tree::Reset()
 	branchesSide[branches.size() - 1] = Sides::None;
 
 	sf::FloatRect windowBounds = FRAMEWORK.GetWindowBounds();
-	setPosition({ windowBounds.width * 0.5f,0.f });
+	SetPosition({ windowBounds.width * 0.5f,0.f });
 }
 
 void Tree::Update(float dt)
