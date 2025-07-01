@@ -24,6 +24,8 @@ void SceneGame::Init()
     texIds.push_back("graphics/branch.png");
     texIds.push_back("graphics/bee.png");
     texIds.push_back("graphics/player.png");
+    texIds.push_back("graphics/axe.png");
+    texIds.push_back("graphics/rip.png");
 
     AddGameObject(new SpriteGo("graphics/background.png"));
     for (int i = 0; i < 3; i++)
@@ -36,6 +38,9 @@ void SceneGame::Init()
 
     Scene::Init();
 }
+// 누르고 있을 때 도끼 보이기
+// 충돌 시 비석
+// 죽었을 때 입력 안받고, 리턴시 재시작
 
 void SceneGame::Enter()
 {
@@ -50,4 +55,26 @@ void SceneGame::Enter()
 void SceneGame::Exit()
 {
     Scene::Exit();
+}
+
+void SceneGame::Update(float dt)
+{
+    Scene::Update(dt);
+
+    if (InputMgr::GetKeyDown(sf::Keyboard::Left))
+    {
+        tree->UpdateBranches();
+        player->setSide(Sides::Left);
+    }
+
+    if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+    {
+        tree->UpdateBranches();
+        player->setSide(Sides::Right);
+    }
+
+    if (tree->GetSide() == player->getSide())
+    {
+        std::cout << "충돌" << std::endl;
+    }
 }

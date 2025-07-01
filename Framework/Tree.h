@@ -18,6 +18,8 @@ public:
 	void setPosition(const sf::Vector2f& pos) override;
 	Sides UpdateBranches();
 
+	Sides GetSide() const { return branchesSide[branchesSide.size() - 1]; }
+
 	void Init() override;
 	void Release() override;
 	void Reset() override;
