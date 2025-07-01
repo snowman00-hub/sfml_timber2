@@ -16,7 +16,7 @@ public:
 	~Tree() override = default;
 
 	void setPosition(const sf::Vector2f& pos) override;
-	void UpdateBranches();
+	Sides UpdateBranches();
 
 	void Init() override;
 	void Release() override;

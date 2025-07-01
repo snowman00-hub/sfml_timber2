@@ -5,6 +5,7 @@
 #include "BackgroundElement.h"
 #include "Tree.h"
 #include "Bee.h"
+#include "Player.h"
 
 SceneGame::SceneGame()
 	: Scene(SceneIds::Game)
@@ -22,14 +23,16 @@ void SceneGame::Init()
     texIds.push_back("graphics/tree.png");
     texIds.push_back("graphics/branch.png");
     texIds.push_back("graphics/bee.png");
+    texIds.push_back("graphics/player.png");
 
     AddGameObject(new SpriteGo("graphics/background.png"));
     for (int i = 0; i < 3; i++)
     {
         AddGameObject(new BackgroundElement("graphics/cloud.png"));
     }
-    AddGameObject(new Tree());
+    tree = (Tree*)AddGameObject(new Tree());
     AddGameObject(new Bee("graphics/bee.png"));
+    player = (Player*)AddGameObject(new Player());
 
     Scene::Init();
 }
@@ -37,6 +40,11 @@ void SceneGame::Init()
 void SceneGame::Enter()
 {
     Scene::Enter();
+
+    sf::Vector2f pos = tree->getPosition();
+    pos.y = 950.f;
+
+    player->setPosition(pos);
 }
 
 void SceneGame::Exit()
