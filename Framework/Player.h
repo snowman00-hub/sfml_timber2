@@ -15,8 +15,10 @@ protected:
 
 	std::string textureId;
 	std::string axeTexId;
+	std::string ripTexId;
 
-	bool isAxe = false;
+	bool isAlive = true;
+	bool drawAxe = false;
 
 public:
 	Player(const std::string& name = "");
@@ -27,9 +29,10 @@ public:
 
 	void SetPosition(const sf::Vector2f& pos) override;
 
+	void SetAlive(bool live);
+
 	void SetSprite(const std::string& id) { sprite.setTexture(TEXTURE_MGR.Get(id)); }
-	void SetRipScale() { sprite.setScale({ 1.f,1.f }); }
-	void SetAxeFalse() { isAxe = false; }
+	void SetDrawAxe(bool draw) { drawAxe = draw; }
 	
 	void Init() override;
 	void Release() override;

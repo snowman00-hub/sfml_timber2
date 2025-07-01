@@ -9,7 +9,7 @@ class SceneGame : public Scene
 protected:
 	Player* player;
 	Tree* tree;
-	bool isActive = true;
+	bool isPlaying = true;
 
 public:
 	SceneGame();

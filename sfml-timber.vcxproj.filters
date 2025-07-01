@@ -66,7 +66,7 @@
     <ClCompile Include="Framework\Tree.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="Framework\Player.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -128,7 +128,7 @@
     <ClInclude Include="Framework\Tree.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="Framework\Player.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

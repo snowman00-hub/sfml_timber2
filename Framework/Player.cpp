@@ -20,12 +20,29 @@ void Player::SetPosition(const sf::Vector2f& pos)
 {
 	position = pos;
 	sprite.setPosition(position + positions[(int)side]);
+	axeSprite.setPosition(position + axePositions[(int)side]);
+}
+
+void Player::SetAlive(bool live)
+{
+	if (live)
+	{
+		sprite.setTexture(TEXTURE_MGR.Get(textureId));
+	}
+	else
+	{
+		sprite.setTexture(TEXTURE_MGR.Get(ripTexId));
+		sprite.setScale({ 1.f,1.f });
+		drawAxe = false;
+	}
+	Utils::SetOrigin(sprite, Origins::BC);
 }
 
 void Player::Init()
 {
 	textureId = "graphics/player.png";
 	axeTexId = "graphics/axe.png";
+	ripTexId = "graphics/rip.png";
 
 	positions.resize(2);
 	positions[(int)Sides::Left] = { -300.f,0.f };
@@ -53,28 +70,13 @@ void Player::Reset()
 
 void Player::Update(float dt)
 {
-	/*
-	if (InputMgr::GetKeyDown(sf::Keyboard::Left))
-	{
-		setSide(Sides::Left);
-	}
-
-	if (InputMgr::GetKeyDown(sf::Keyboard::Right))
-	{
-		setSide(Sides::Right);
-	}
-	*/
-	isAxe = false;
-	if (InputMgr::GetKey(sf::Keyboard::Left) || InputMgr::GetKey(sf::Keyboard::Right))
-	{
-		isAxe = true;
-	}
+	drawAxe = false;
 }
 
 void Player::Draw(sf::RenderWindow& window)
 {
 	window.draw(sprite);
-	if (isAxe)
+	if (drawAxe)
 	{
 		window.draw(axeSprite);
 	}
