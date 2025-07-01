@@ -3,13 +3,19 @@
 
 class Player;
 class Tree;
+class UiHud;
 
 class SceneGame : public Scene
 {
 protected:
 	Player* player;
 	Tree* tree;
-	bool isPlaying = true;
+	UiHud* uiHud;
+
+	bool isPlaying = false;
+	int score = 0;
+	float timer = 0.f;
+	float timerMax = 7.f;
 
 public:
 	SceneGame();
