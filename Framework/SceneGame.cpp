@@ -59,22 +59,36 @@ void SceneGame::Exit()
 
 void SceneGame::Update(float dt)
 {
-    Scene::Update(dt);
-
-    if (InputMgr::GetKeyDown(sf::Keyboard::Left))
+    if (isActive)
     {
-        tree->UpdateBranches();
-        player->setSide(Sides::Left);
+        Scene::Update(dt);
+
+        if (InputMgr::GetKeyDown(sf::Keyboard::Left))
+        {
+            tree->UpdateBranches();
+            player->setSide(Sides::Left);
+        }
+
+        if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+        {
+            tree->UpdateBranches();
+            player->setSide(Sides::Right);
+        }
+
+        if (tree->GetSide() == player->getSide())
+        {
+            player->setSprite("graphics/rip.png");
+            player->setAxeFalse();
+            isActive = false;
+        }
     }
-
-    if (InputMgr::GetKeyDown(sf::Keyboard::Right))
+    else
     {
-        tree->UpdateBranches();
-        player->setSide(Sides::Right);
-    }
-
-    if (tree->GetSide() == player->getSide())
-    {
-        std::cout << "Ãæµ¹" << std::endl;
+        if (InputMgr::GetKeyDown(sf::Keyboard::Return))
+        {
+            isActive = true;
+            tree->Reset();
+            player->Reset();
+        }
     }
 }
